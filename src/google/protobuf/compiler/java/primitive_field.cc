@@ -122,7 +122,7 @@ void SetPrimitiveVariables(
       WireFormat::TagSize(descriptor->number(), GetType(descriptor)));
   if (IsReferenceType(GetJavaType(descriptor))) {
     (*variables)["null_check"] =
-        "if (value == null) { throw new NullPointerException(); }";
+        "if (value == null) { return this; }";
   } else {
     (*variables)["null_check"] = "";
   }
